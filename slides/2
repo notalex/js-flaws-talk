@@ -1,0 +1,4 @@
+
+new String('foo') == new String('foo')
+String('foo') == new String('foo')
+'foo' == new String('foo')
