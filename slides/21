@@ -1,0 +1,7 @@
+
+//--
+(function() {
+  var count = 1
+  // All your code goes here.
+})()
+console.log(global.count);
