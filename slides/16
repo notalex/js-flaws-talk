@@ -1,8 +1,10 @@
 
 //--
 var Human = function() {
-  return { type: 'person' }
-};
+  this.type = 'name'
+}
+
+console.log(Human.type);
 
 var person = new Human
 console.log(person.hasOwnProperty('type'));

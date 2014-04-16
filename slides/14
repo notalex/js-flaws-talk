@@ -1,8 +1,9 @@
 
 //--
-Object.prototype.somethingGlobal = 'globalVal'
+var Human = function() {}
+Human.prototype.type = 'human'
 
-var Person = function() {};
-newPerson = new Person()
-console.log(newPerson.hasOwnProperty('somethingGlobal'));
-console.log(newPerson.somethingGlobal);
+var person = new Human()
+console.log(person.type);
+console.log(person.hasOwnProperty('type'));
+console.log(person.__proto__ == Human.prototype);
