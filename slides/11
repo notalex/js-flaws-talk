@@ -1,0 +1,7 @@
+function foo(){
+  return bar()
+  var val = 'value'
+  function bar() { return val; }
+
+}
+console.log(foo());
