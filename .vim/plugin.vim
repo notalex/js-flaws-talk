@@ -1,4 +1,4 @@
-" %s/\\s\\+\\/\\/.\\+$//
+" %s/\s\+\/\/.\+$//
 
 function! s:ReplaceWithOutput(contents)
   let filepath = <SID>WriteToFile(a:contents)
