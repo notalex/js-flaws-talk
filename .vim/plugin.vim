@@ -25,7 +25,11 @@ function! s:FormattedOutput(output)
   let results = split(a:output, "\n")
 
   if len(results)
-    return results[-1]
+    if len(results) > 1 && strlen(matchstr(results[-2], '^TypeError'))
+      return results[-2] . results[-1]
+    else
+      return results[-1]
+    endif
   else
     return ''
   endif
