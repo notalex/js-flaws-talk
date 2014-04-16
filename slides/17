@@ -1,0 +1,27 @@
+
+//     __  __    _
+//    / /_/ /_  (_)____
+//   / __/ __ \/ / ___/
+//  / /_/ / / / (__  )
+//  \__/_/ /_/_/____/
+//
+
+//--
+var Dog = {
+  type: 'dog',
+  action: 'barks',
+  speak: function() { return this.type + ' ' + this.action }
+};
+
+console.log(Dog.speak());
+
+var speech = Dog.speak
+console.log(speech());
+
+var Cat = {
+  type: 'cat',
+  action: 'meows'
+}
+
+Cat.speak = speech
+console.log(Cat.speak());

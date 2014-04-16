@@ -1,0 +1,13 @@
+
+//--
+var Foo = function() {}
+
+Foo.attr = 'foo'
+Foo.method = function() {
+  test = function() {
+    return this.attr;
+  };
+  return test();
+};
+
+console.log(Foo.method());
