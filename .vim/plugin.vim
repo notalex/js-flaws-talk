@@ -31,8 +31,10 @@ function! s:FormattedOutput(output)
   endif
 endfunction
 
-function! s:AddLineOutput(original_content)
-  let escaped_contents = escape(a:original_content, '"')
+function! s:AddLineOutput()
+  let original_content = <SID>ContentWithoutComments()
+
+  let escaped_contents = escape(original_content, '"')
   let content = ['console.log(' . escaped_contents . ')']
   call <SID>ReplaceWithOutput(content)
 endfunction
@@ -57,16 +59,6 @@ function! s:ContentWithoutComments()
   return substitute(content, '\s\+\/\/.\+$', '', '')
 endfunction
 
-function! s:AddOutput()
-  let content = <SID>ContentWithoutComments()
-
-  if strlen(matchstr(content, 'console.log'))
-    call s:AddParagraphOutput()
-  else
-    call s:AddLineOutput(content)
-  end
-endfunction
-
 function! s:AppendNextSlide()
   let contents = readfile('slides/' . g:current_slide_number)
   call append(line('$'), contents)
@@ -81,6 +73,7 @@ endfunction
 
 let g:current_slide_number = 1
 
-nmap <F6>rt :call <SID>AddOutput()<CR>
+nmap <F6>rl :call <SID>AddLineOutput()<CR>
+nmap <F6>rp :call <SID>AddParagraphOutput()<CR>
 nmap <F6>rn :call <SID>AppendNextSlide()<CR>
-nmap <F6>rp :call <SID>DecrementCurrentSlideCount()<CR>
+nmap <F6>ru :call <SID>DecrementCurrentSlideCount()<CR>
