@@ -1,4 +1,5 @@
 " %s/\s\+\/\/.\+$//
+" let g:current_slide_number= 1
 
 function! s:ReplaceWithOutput(contents)
   let filepath = <SID>WriteToFile(a:contents)
