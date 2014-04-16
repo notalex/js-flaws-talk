@@ -23,7 +23,12 @@ endfunction
 
 function! s:FormattedOutput(output)
   let results = split(a:output, "\n")
-  return results[-1]
+
+  if len(results)
+    return results[-1]
+  else
+    return ''
+  endif
 endfunction
 
 function! s:AddLineOutput(original_content)
