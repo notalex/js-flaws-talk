@@ -1,0 +1,11 @@
+
+//--
+var Human = function() {}
+Human.type = 'human'
+
+var humanConstructor = function() {};
+humanConstructor.prototype = Human
+var person = new humanConstructor()
+
+console.log(person.type);
+console.log(person.__proto__ == Human);

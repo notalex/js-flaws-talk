@@ -1,0 +1,8 @@
+
+//--
+Object.prototype.somethingGlobal = 'globalVal'
+
+var Person = function() {};
+newPerson = new Person()
+console.log(newPerson.hasOwnProperty('somethingGlobal'));
+console.log(newPerson.somethingGlobal);
