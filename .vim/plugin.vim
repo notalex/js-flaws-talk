@@ -62,19 +62,19 @@ function! s:AddOutput()
 endfunction
 
 function! s:AppendNextSlide()
-  let contents = readfile('slides/' . s:current_slide_number)
+  let contents = readfile('slides/' . g:current_slide_number)
   call append(line('$'), contents)
   call append(line('$'), '')
 
-  let s:current_slide_number += 1
+  let g:current_slide_number += 1
 endfunction
 
 function! s:DecrementCurrentSlideCount()
-  let s:current_slide_number -= 1
+  let g:current_slide_number -= 1
 endfunction
 
-let s:current_slide_number = 1
+let g:current_slide_number = 1
 
-nmap <buffer> <F6>rt :call <SID>AddOutput()<CR>
-nmap <buffer> <F6>rn :call <SID>AppendNextSlide()<CR>
-nmap <buffer> <F6>rp :call <SID>DecrementCurrentSlideCount()<CR>
+nmap <F6>rt :call <SID>AddOutput()<CR>
+nmap <F6>rn :call <SID>AppendNextSlide()<CR>
+nmap <F6>rp :call <SID>DecrementCurrentSlideCount()<CR>
