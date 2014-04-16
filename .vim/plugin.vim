@@ -41,7 +41,7 @@ endfunction
 
 function! s:AddParagraphOutput()
   let end_line_number = line('.')
-  call search('^\/\/--')
+  call search('^\/\/--', 'b')
   normal j
   let start_line_number = line('.')
   execute 'normal ' . end_line_number . 'gg'
