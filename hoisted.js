@@ -18,6 +18,7 @@ function foo(){
 function foo(){
   var val
   var bar
+  val = 'value'
   return bar()
   bar = function() { return val; }
 }
