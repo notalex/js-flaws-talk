@@ -23,5 +23,5 @@ var Cat = {
   action: 'meows'
 }
 
-Cat.speak = speech
-console.log(Cat.speak());
+Cat.say = speech
+console.log(Cat.say());

@@ -2,10 +2,10 @@
 //--
 var Foo = function() {}
 
-Foo.attr = 'foo'
+Foo.type = 'foo'
 Foo.method = function() {
   test = function() {
-    return this.attr;
+    return this.type;
   };
   return test();
 };
